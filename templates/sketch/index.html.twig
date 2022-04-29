@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travaux{% endblock %}
+
+{% block body %}
+    
+    <h2 class="form-title">Mes Esquisses</h1>
+    <div class="form-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Year</th>
+                    <th>Image</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for sketch in sketches %}
+                <tr>
+                    <td>{{ sketch.id }}</td>
+                    <td>{{ sketch.year }}</td>
+                    <td>{{ sketch.image }}</td>
+                    <td>
+                        <!-- <a href="{{ path('app_sketch_show', {'id': sketch.id}) }}">show</a> -->
+                        <a href="{{ path('app_sketch_edit', {'id': sketch.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_sketch_new') }}" class="btn btn-dark btn-lg">Ajouter</a>
+
+    <div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une pièce{% endblock %}
+
+{% block body %}
+    <h1>Modifier une pièce</h1>
+
+    {{ include('piece/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_piece_index') }}">Retour aux pièces</a>
+
+    {{ include('piece/_delete_form.html.twig') }}
+{% endblock %}

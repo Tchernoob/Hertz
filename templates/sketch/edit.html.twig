@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Sketch{% endblock %}
+
+{% block body %}
+    <h1>Edit Sketch</h1>
+
+    {{ include('sketch/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_sketch_index') }}">back to list</a>
+
+    {{ include('sketch/_delete_form.html.twig') }}
+{% endblock %}
